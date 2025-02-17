@@ -3,70 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Portfolio</title>
-
-    <!-- Stylesheets -->
+    <title>Portfolio</title>
     <link rel="stylesheet" href="config/edits.css">
-    <script src="config/add-ons.js" defer></script>
 </head>
 <body>
-
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="spinner"></div>
+    <div class="container">
+        <h1 class="animated-text">Welcome to my portfolio!</h1>
     </div>
-
-    <!-- Welcome Message -->
-    <div id="welcome-message">Welcome to my portfolio! <3</div>
-
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Powered by GitHub Pages</p>
-    </header>
-    
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>This is a brief introduction about me.</p>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div id="project-list"></div>
-        </section>
-    </main>
-
-    <script>
-        // Loading screen fade-out
-        window.onload = function() {
-            setTimeout(() => {
-                document.getElementById("loading-screen").style.opacity = "0";
-                setTimeout(() => {
-                    document.getElementById("loading-screen").style.display = "none";
-                    document.getElementById("welcome-message").style.opacity = "1";
-                }, 500);
-            }, 2000);
-        };
-
-        // Mouse movement effect on welcome text
-        document.addEventListener("mousemove", (event) => {
-            const text = document.getElementById("welcome-message");
-            let x = (event.clientX / window.innerWidth) * 50 - 25;
-            let y = (event.clientY / window.innerHeight) * 50 - 25;
-            text.style.transform = `translate(${x}px, ${y}px)`;
-        });
-
-        // Apply theme from main.json
-        fetch('main.json')
-            .then(response => response.json())
-            .then(data => {
-                document.body.style.backgroundColor = data.backgroundColor;
-                document.body.style.color = data.textColor;
-                document.body.style.fontFamily = data.fontFamily;
-                document.querySelectorAll("h2").forEach(el => el.style.color = data.primaryColor);
-            })
-            .catch(error => console.error('Error loading JSON:', error));
-    </script>
-
+    <script src="config/add-ons.js"></script>
 </body>
 </html>
