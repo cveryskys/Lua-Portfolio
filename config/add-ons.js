@@ -1,17 +1,21 @@
 const text = document.querySelector('.animated-text');
-let lastX = 0, lastY = 0, velX = 0, velY = 0;
 
-function smoothMove(event) {
-    const width = window.innerWidth, height = window.innerHeight;
-    const x = (event.clientX / width) * 2 - 1;
-    const y = (event.clientY / height) * 2 - 1;
-    velX += (x * 20 - lastX) * 0.1;
-    velY += (y * -20 - lastY) * 0.1;
-    lastX += velX;
-    lastY += velY;
-    text.style.transform = `rotateX(${lastY}deg) rotateY(${lastX}deg)`;
-    velX *= 0.9;
-    velY *= 0.9;
+function handleMouseMove(event) {
+    const { innerWidth: width, innerHeight: height } = window;
+    const { clientX: x, clientY: y } = event;
+    const rotateY = ((x / width) * 40) - 20;
+    const rotateX = ((y / height) * -40) + 20;
+    text.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 }
 
-window.addEventListener('mousemove', smoothMove);
+fetch('config/main.json')
+    .then(response => response.json())
+    .then(data => {
+        document.body.style.backgroundColor = data.backgroundColor;
+        document.body.style.color = data.textColor;
+        document.body.style.fontFamily = data.fontFamily;
+        text.style.color = data.primaryColor;
+    })
+    .catch(error => console.error('Error loading JSON:', error));
+
+window.addEventListener('mousemove', handleMouseMove);
