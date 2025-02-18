@@ -13,26 +13,59 @@
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.loader .spinner {
-  width: 80px;
-  height: 80px;
-  border: 10px solid #E5E5E5;
-  border-top: 10px solid #333333;
-  border-radius: 50%;
-  animation: spin 1s linear infinite, pulse 1.5s infinite ease-in-out;
+.loader .heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  background-color: #FFFFFF;
+  border: 5px solid #707070;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  animation: bounce 1s infinite, shudder 0.1s infinite;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.loader .heart::before,
+.loader .heart::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background-color: #FFFFFF;
+  border: 5px solid #707070;
+  border-radius: 50px 50px 0 0;
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
+.loader .heart::before {
+  top: -50px;
+  left: 0;
+}
+
+.loader .heart::after {
+  left: 50px;
+  top: 0;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: rotate(-45deg) translateY(0); }
+  50% { transform: rotate(-45deg) translateY(-20px); }
+}
+
+@keyframes shudder {
+  0%, 100% { transform: rotate(-45deg) translateX(0); }
+  25% { transform: rotate(-45deg) translateX(-2px); }
+  75% { transform: rotate(-45deg) translateX(2px); }
 }
 
 .hidden {
   opacity: 0;
   transform: scale(0);
+}
+
+.break {
+  animation: break 1s forwards;
+}
+
+@keyframes break {
+  0% { transform: rotate(-45deg) scale(1); }
+  100% { transform: rotate(-45deg) scale(0); }
 }
