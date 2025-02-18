@@ -21,6 +21,6 @@ body, html {
     text-align: center;
     transform-style: preserve-3d;
     transition: transform 0.1s ease-out;
-    color: white;
-    text-shadow: 5px 5px 15px rgba(255, 255, 255, 0.2);
+    color: #959595;
+    text-shadow: 5px 5px 15px rgba(38, 38, 38, 0.2);
 }
