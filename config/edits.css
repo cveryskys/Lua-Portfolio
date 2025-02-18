@@ -9,7 +9,7 @@ body, html {
     background-color: #ffffff;
     overflow: hidden;
     font-family: "Poppins", sans-serif;
-    color: #333;
+    color: #151515;
 }
 
 .container {
@@ -23,9 +23,6 @@ body, html {
     transform-style: preserve-3d;
     transition: transform 0.1s ease-out;
     
-    background: linear-gradient(90deg, #6a11cb, #2575fc); 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-    text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(#ffffff, #3b3b3b);     
+    text-shadow: 0px 4px 20px rgba(165, 165, 165, 0.1);
 }
