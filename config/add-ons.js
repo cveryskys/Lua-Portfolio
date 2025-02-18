@@ -9,19 +9,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const rotateY = ((x / width) * 40) - 20;
         const rotateX = ((y / height) * -40) + 20;
+        const gradientX = ((x / width) * 100);
+        const gradientY = ((y / height) * 100);
 
         requestAnimationFrame(() => {
             text.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            text.style.background = `linear-gradient(${gradientX}deg, #FFFFFF, #CCCCCC)`;
         });
     }
 
     fetch("config/main.json")
         .then(response => response.json())
         .then(data => {
-            document.body.style.backgroundColor = data.backgroundColor || "#F5F5F5";
-            document.body.style.color = data.textColor || "#333333";
+            document.body.style.backgroundColor = data.backgroundColor || "#1A1A1A";
+            document.body.style.color = data.textColor || "#E5E5E5";
             document.body.style.fontFamily = data.fontFamily || "Helvetica, Arial, sans-serif";
-            text.style.color = data.primaryColor || "#000000";
+            text.style.color = data.primaryColor || "#FFFFFF";
         })
         .catch(error => console.error("Error loading JSON:", error));
 
