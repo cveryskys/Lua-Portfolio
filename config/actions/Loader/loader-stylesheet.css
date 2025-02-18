@@ -9,6 +9,8 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .loader .spinner {
@@ -23,4 +25,9 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.hidden {
+  opacity: 0;
+  transform: scale(0);
 }

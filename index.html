@@ -11,17 +11,10 @@
     <div class="loader">
         <div class="spinner"></div>
     </div>
-    <div class="container" style="display: none;">
+    <div class="container" style="display: none; opacity: 0;">
         <h1 class="animated-text">hiii! welcome to my portfolio!!</h1>
     </div>
     <script src="config/add-ons.js"></script>
-    <script>
-        window.addEventListener('load', () => {
-            const loader = document.querySelector('.loader');
-            const container = document.querySelector('.container');
-            loader.style.display = 'none';
-            container.style.display = 'flex';
-        });
-    </script>
+    <script src="config/actions/Loader/loaderJava.js"></script>
 </body>
 </html>
