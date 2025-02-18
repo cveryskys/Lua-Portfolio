@@ -14,46 +14,42 @@
 }
 
 .loader .heart {
+  width: 50px;
+  aspect-ratio: 1;
+  color: #FFFFFF;
+  background:
+    radial-gradient(circle at 60% 65%, currentColor 62%, #0000 65%) top left,
+    radial-gradient(circle at 40% 65%, currentColor 62%, #0000 65%) top right,
+    linear-gradient(to bottom left, currentColor 42%, #0000 43%) bottom left,
+    linear-gradient(to bottom right, currentColor 42%, #0000 43%) bottom right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
   position: relative;
-  width: 100px;
-  height: 90px;
-  background-color: #FFFFFF;
-  border: 5px solid #707070;
-  border-radius: 50px 50px 0 0;
-  transform: rotate(-45deg);
-  animation: bounce 1s infinite, shudder 0.1s infinite;
+  animation: pounce 1s infinite, shake 0.1s infinite;
 }
 
-.loader .heart::before,
 .loader .heart::after {
   content: "";
   position: absolute;
-  width: 100px;
-  height: 90px;
-  background-color: #FFFFFF;
-  border: 5px solid #707070;
-  border-radius: 50px 50px 0 0;
+  inset: 0;
+  background: inherit;
+  opacity: 0.4;
+  animation: pulse 1s infinite;
 }
 
-.loader .heart::before {
-  top: -50px;
-  left: 0;
+@keyframes pounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.loader .heart::after {
-  left: 50px;
-  top: 0;
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
 }
 
-@keyframes bounce {
-  0%, 100% { transform: rotate(-45deg) translateY(0); }
-  50% { transform: rotate(-45deg) translateY(-20px); }
-}
-
-@keyframes shudder {
-  0%, 100% { transform: rotate(-45deg) translateX(0); }
-  25% { transform: rotate(-45deg) translateX(-2px); }
-  75% { transform: rotate(-45deg) translateX(2px); }
+@keyframes pulse {
+  to { transform: scale(1.8); opacity: 0; }
 }
 
 .hidden {
@@ -66,6 +62,6 @@
 }
 
 @keyframes break {
-  0% { transform: rotate(-45deg) scale(1); }
-  100% { transform: rotate(-45deg) scale(0); }
+  0% { transform: scale(1); }
+  100% { transform: scale(0); }
 }
