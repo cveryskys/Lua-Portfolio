@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.style.color = data.textColor || "#E5E5E5";
             document.body.style.fontFamily = data.fontFamily || "Helvetica, Arial, sans-serif";
             text.style.color = data.primaryColor || "#FFFFFF";
+            text.style.opacity = 0;
+            setTimeout(() => {
+                text.style.transition = "opacity 1s ease-in-out";
+                text.style.opacity = 1;
+            }, 7000); // Delay to ensure loader finishes before text fades in
         })
         .catch(error => console.error("Error loading JSON:", error));
 
