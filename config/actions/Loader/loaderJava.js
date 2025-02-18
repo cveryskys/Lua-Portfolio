@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
           container.style.display = 'flex';
           setTimeout(() => {
               container.style.opacity = 1;
-          }, 100); 
-      }, 1000); 
-  }, 5000); 
+          }, 100); // delay
+      }, 1000); // dur
+  }, 3000); // displayed
 });
