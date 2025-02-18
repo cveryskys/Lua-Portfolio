@@ -9,12 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const rotateY = ((x / width) * 40) - 20;
         const rotateX = ((y / height) * -40) + 20;
-        const gradientX = ((x / width) * 100);
-        const gradientY = ((y / height) * 100);
 
         requestAnimationFrame(() => {
             text.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            text.style.background = `linear-gradient(${gradientX}deg, #FFFFFF, #CCCCCC)`;
         });
     }
 

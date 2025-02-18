@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="config/edits.css">
+    <link rel="stylesheet" href="config/actions/Loader/loader-stylesheet.css">
 </head>
 <body>
-    <div class="container">
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+    <div class="container" style="display: none;">
         <h1 class="animated-text">hiii! welcome to my portfolio!!</h1>
     </div>
     <script src="config/add-ons.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            const loader = document.querySelector('.loader');
+            const container = document.querySelector('.container');
+            loader.style.display = 'none';
+            container.style.display = 'flex';
+        });
+    </script>
 </body>
 </html>
