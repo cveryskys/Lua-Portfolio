@@ -4,13 +4,13 @@ window.addEventListener('load', () => {
   const container = document.querySelector('.container');
 
   setTimeout(() => {
-      const crack = document.createElement('div');
-      crack.classList.add('crack');
-      heart.appendChild(crack);
+      const zigzag = document.createElement('div');
+      zigzag.classList.add('zigzag');
+      heart.appendChild(zigzag);
 
       setTimeout(() => {
           heart.classList.add('fall-apart');
-          crack.classList.add('fall-apart-right');
+          zigzag.classList.add('fall-apart-right');
 
           setTimeout(() => {
               loader.classList.add('hidden');
