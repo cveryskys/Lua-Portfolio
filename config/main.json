@@ -1,8 +1,8 @@
 {
-    "backgroundColor": "#2E2E2E",
-    "textColor": "#D0D0D0",
-    "fontFamily": "Arial, sans-serif",
-    "primaryColor": "#B0B0B0",
+    "backgroundColor": "#F5F5F5",
+    "textColor": "#333333",
+    "fontFamily": "Helvetica, Arial, sans-serif",
+    "primaryColor": "#000000",
     "secondaryColor": "#707070",
     "accentColor": "#858585",
     "lightColor": "#E5E5E5",

@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("config/main.json")
         .then(response => response.json())
         .then(data => {
-            document.body.style.backgroundColor = data.backgroundColor || "#ffffff";
-            document.body.style.color = data.textColor || "#333";
-            document.body.style.fontFamily = data.fontFamily || "Poppins, sans-serif";
-            text.style.color = data.primaryColor || "#6a11cb";
+            document.body.style.backgroundColor = data.backgroundColor || "#F5F5F5";
+            document.body.style.color = data.textColor || "#333333";
+            document.body.style.fontFamily = data.fontFamily || "Helvetica, Arial, sans-serif";
+            text.style.color = data.primaryColor || "#000000";
         })
         .catch(error => console.error("Error loading JSON:", error));
 
