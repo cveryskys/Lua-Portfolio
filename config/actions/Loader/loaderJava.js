@@ -19,9 +19,9 @@ window.addEventListener('load', () => {
                   container.style.display = 'flex';
                   setTimeout(() => {
                       container.style.opacity = 1;
-                  }, 100); // Small delay to ensure display change is applied
-              }, 1000); // Duration of the fade-out and shrink animation
-          }, 1000); // Duration of the heart break animation
-      }, 1000); // Duration of the crack animation
-  }, 5000); // Display loader for 5 seconds
+                  }, 100);
+              }, 1000); 
+          }, 1000); 
+      }, 1000); 
+  }, 5000); 
 });

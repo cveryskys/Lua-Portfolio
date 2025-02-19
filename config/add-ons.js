@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const text = document.querySelector(".animated-text");
+    const navOptions = document.querySelectorAll(".nav-option");
 
     function handleMouseMove(event) {
         const width = window.innerWidth;
@@ -26,9 +27,30 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 text.style.transition = "opacity 1s ease-in-out";
                 text.style.opacity = 1;
-            }, 7000); // Delay to ensure loader finishes before text fades in
+            }, 7000); // Delayed fade-in
         })
         .catch(error => console.error("Error loading JSON:", error));
+
+    function handleScroll() {
+        navOptions.forEach(option => {
+            const rect = option.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.8) {
+                option.classList.add("show");
+            }
+        });
+    }
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); 
+
+    navOptions.forEach(option => {
+        option.addEventListener("click", () => {
+            const targetPage = option.getAttribute("data-target");
+            document.body.style.opacity = "0";
+            setTimeout(() => {
+                window.location.href = targetPage;
+            }, 500);
+        });
+    });
 
     window.addEventListener("mousemove", handleMouseMove);
 });
